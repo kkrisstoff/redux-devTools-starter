@@ -3,12 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Header from '../components/Header';
 import MainSection from '../components/MainSection';
-
-import { combineReducers } from 'redux';
-import { Provider } from 'react-redux';
 import * as TodoActions from '../actions/TodoActions';
 
-class App extends Component {
+class TodoApp extends Component {
   render() {
     const { todos, actions } = this.props;
 

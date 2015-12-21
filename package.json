@@ -4,7 +4,7 @@
   "description": "ReactJS project with dev-tools and hot code reloading",
   "scripts": {
     "start": "node server.js",
-    "dev": "DEBUG=true node server.js",
+    "dev": "DEBUG=true npm start",
     "lint": "eslint src"
   },
   "repository": {
@@ -33,12 +33,18 @@
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
+    "classnames": "^2.2.1",
+    "lodash": "^3.10.1",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-redux": "^4.0.1",
-    "redux": "^1.0.0-rc"
+    "redux": "^1.0.1"
   },
   "babel": {
-    "presets": ["es2015", "stage-0", "react"]
+    "presets": [
+      "es2015",
+      "stage-0",
+      "react"
+    ]
   }
 }
