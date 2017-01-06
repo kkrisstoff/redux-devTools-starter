@@ -35,10 +35,9 @@
   "dependencies": {
     "classnames": "^2.2.1",
     "lodash": "^3.10.1",
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0",
-    "react-redux": "^4.0.1",
-    "redux": "^1.0.1"
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "redux": "^3.6.0"
   },
   "babel": {
     "presets": [

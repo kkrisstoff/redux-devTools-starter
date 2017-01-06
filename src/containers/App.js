@@ -21,16 +21,17 @@ class App extends Component {
   }
 }
 
-function mapState(state) {
-  return {
-    todos: state.todos
-  };
-}
+// function mapState(state) {
+//   return {
+//     todos: state.todos
+//   };
+// }
+//
+// function mapDispatch(dispatch) {
+//   return {
+//     actions: bindActionCreators(TodoActions, dispatch)
+//   };
+// }
 
-function mapDispatch(dispatch) {
-  return {
-    actions: bindActionCreators(TodoActions, dispatch)
-  };
-}
-
-export default connect(mapState, mapDispatch)(TodoApp);
+//export default connect(mapState, mapDispatch)(App);
+export default App;
