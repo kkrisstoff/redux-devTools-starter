@@ -1,15 +1,17 @@
 import React, { PropTypes, Component } from 'react';
 
 export default class Controls extends Component {
-    // static propTypes = {
-    //     addTodo: PropTypes.func.isRequired
-    // };
+    static propTypes = {
+        sendMessage: PropTypes.func.isRequired
+    };
 
     handleSubmit(e) {
         e.preventDefault();
-        const text = e.target.querySelector('textarea').value;
+        const input = e.target.querySelector('textarea');
+        const text = input.value;
         if (text.length) {
             this.props.sendMessage(text);
+            input.value = '';
         }
     }
 

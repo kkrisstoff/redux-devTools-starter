@@ -15,7 +15,7 @@
     "react",
     "reactjs"
   ],
-  "author": "mobidev <@mobidev.biz> (http://github.com/)",
+  "author": "",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.0.20",
