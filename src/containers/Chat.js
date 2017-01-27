@@ -10,13 +10,13 @@ class Chat extends Component {
     sendMessageEvent(text) {
         this.props.sendMessage(text);
     }
-    getAllMessages() {
-        return this.props.chat.messages;
-    }
+
     render() {
+        const { chat } = this.props;
+
         return (
             <div>
-                <Messsages messages={this.getAllMessages()} />
+                <Messsages messages={chat.messages} />
                 <Controls sendMessage={::this.sendMessageEvent}/>
             </div>
         );
