@@ -4,29 +4,28 @@
 //   module.exports = require('./Root.prod');
 // }
 
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
-
-import AccessCnt from './AccessCnt';
-//import App from './App'
-import Chat from './Chat'
+import { Router, Route, browserHistory } from 'react-router';
 
 import configureStore from '../store/configureStore';
 
+//import AccessCnt from './AccessCnt';
+//import App from './App'
+import Chat from './Chat'
+
 const store = configureStore();
 
-console.log(store);
+const Root = ({ store }) => (
+  <Provider store={store}>
+      <Router history={browserHistory}>
+          <Route path="/" component={Chat} />
+      </Router>
+  </Provider>
+);
 
-store.subscribe( () => {
-    console.log("New State", store.getState());
-});
+Root.propTypes = {
+  store: PropTypes.object.isRequired,
+};
 
-export default class Root extends Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <Chat />
-            </Provider>
-        );
-    }
-}
+export default Root;

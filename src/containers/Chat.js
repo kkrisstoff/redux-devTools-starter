@@ -6,26 +6,32 @@ import {sendMessage, getMessages} from '../actions/ChatActions';
 import Messsages from '../components/Chat/Messages';
 import Controls from '../components/Chat/Controls';
 
+import { fetchPosts } from '../actions/FetchActions';
+
 class Chat extends Component {
-    sendMessageEvent(text) {
-        this.props.sendMessage(text);
-    }
+  sendMessageEvent(text) {
+    this.props.sendMessage(text);
+  }
 
-    render() {
-        const { chat } = this.props;
+  render() {
+    const { chat, store } = this.props;
 
-        return (
-            <div>
-                <Messsages messages={chat.messages} />
-                <Controls sendMessage={::this.sendMessageEvent}/>
-            </div>
-        );
-    }
+    console.log(store);
+    store.dispatch(fetchPosts('reactjs')).then(() =>
+      console.log(store.getState())
+    );
+    return (
+      <div>
+        <Messsages messages={chat.messages} />
+        <Controls sendMessage={::this.sendMessageEvent}/>
+      </div>
+    );
+  }
 }
 
 const mapState = (state) => {
   return {
-      chat: state.chat
+    chat: state.chat
   };
 };
 
