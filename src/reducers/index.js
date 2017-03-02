@@ -1,7 +1,7 @@
+//import friends from "./friends";
 import chat from "./chat";
-import friends from "./friends";
-//import todos from "./todos";
+import list from "./list";
 
+//export {friends};
 export {chat};
-export {friends};
-//export {todos};
+export {list};

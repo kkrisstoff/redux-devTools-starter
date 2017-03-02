@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router'
 
-class App extends Component {
+export default class App extends Component {
   render() {
-    const { actions } = this.props;
 
     return (
-      <div>
-        <p>App</p>
+      <div className='container'>
+        <h1>App</h1>
+        <ul>
+          <li><Link to='/access'>Log In</Link></li>
+          <li><Link to='/chat'>Chat</Link></li>
+          <li><Link to='/list'>List</Link></li>
+        </ul>
+
+        {this.props.children}
       </div>
     );
   }
 }
-
-export default App;

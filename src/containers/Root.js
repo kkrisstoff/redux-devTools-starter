@@ -1,31 +1,26 @@
-// if (__DEV__) {
-//   module.exports = require('./Root.dev');
-// } else {
-//   module.exports = require('./Root.prod');
-// }
-
 import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, browserHistory } from 'react-router';
 
 import configureStore from '../store/configureStore';
 
-//import AccessCnt from './AccessCnt';
-//import App from './App'
+import App from './App'
+import Login from './Login';
 import Chat from './Chat'
+import List from './List'
 
 const store = configureStore();
 
-const Root = ({ store }) => (
+const Root = () => (
   <Provider store={store}>
-      <Router history={browserHistory}>
-          <Route path="/" component={Chat} />
-      </Router>
+    <Router history={browserHistory}>
+      <Route path='/' component={App}>
+        <Route path="/access" component={Login} />
+        <Route path="/chat" component={Chat} />
+        <Route path="/list" component={List} />
+      </Route>
+    </Router>
   </Provider>
 );
-
-Root.propTypes = {
-  store: PropTypes.object.isRequired,
-};
 
 export default Root;

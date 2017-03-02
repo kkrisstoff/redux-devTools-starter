@@ -25,15 +25,12 @@
     "babel-preset-stage-0": "^6.0.15",
     "eslint-plugin-react": "^3.6.2",
     "react-hot-loader": "^3.0.0-beta.6",
-    "redux-devtools": "^3.0.0",
-    "redux-devtools-dock-monitor": "^1.0.1",
-    "redux-devtools-log-monitor": "^1.0.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
     "classnames": "^2.2.1",
-    "isomorphic-fetch": "^2npm outdated.2.1",
+    "isomorphic-fetch": "^2.2.1",
     "lodash": "^3.10.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
@@ -42,12 +39,5 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.8.1",
     "redux-thunk": "^2.2.0"
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "stage-0",
-      "react"
-    ]
   }
 }

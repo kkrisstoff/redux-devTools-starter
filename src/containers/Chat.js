@@ -6,20 +6,14 @@ import {sendMessage, getMessages} from '../actions/ChatActions';
 import Messsages from '../components/Chat/Messages';
 import Controls from '../components/Chat/Controls';
 
-import { fetchPosts } from '../actions/FetchActions';
-
 class Chat extends Component {
   sendMessageEvent(text) {
     this.props.sendMessage(text);
   }
 
   render() {
-    const { chat, store } = this.props;
+    const { chat } = this.props;
 
-    console.log(store);
-    store.dispatch(fetchPosts('reactjs')).then(() =>
-      console.log(store.getState())
-    );
     return (
       <div>
         <Messsages messages={chat.messages} />
