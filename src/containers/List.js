@@ -6,18 +6,16 @@ import { fetchPosts } from '../actions/FetchActions';
 import Item from '../components/List/Item';
 
 class Chat extends Component {
-  sendMessageEvent(text) {
-    this.props.sendMessage(text);
+  onButtonClicked() {
+    const post = 'reactjs';
+    this.props.dispatch({type: 'USER_FETCH_REQUESTED', payload: {post}});
+    //const posts = fetchPosts('reactjs');
+
   }
 
   render() {
     const { list } = this.props;
 
-    console.log(fetchPosts('reactjs'));
-
-    // fetchPosts('reactjs').then((data) =>
-    //   console.log(data)
-    // );
     return (
       <div>
         <ul>
@@ -25,6 +23,7 @@ class Chat extends Component {
             <Item key={i} itemText={item.text}/>
           )}
         </ul>
+        <button onClick={this.onButtonClicked.bind(this)}>Reload Items</button>
       </div>
     );
   }
@@ -36,6 +35,6 @@ const mapState = (state) => {
   };
 };
 
-const mapDispatch = (dispatch) => bindActionCreators({fetchPosts}, dispatch);
+const mapDispatch = (dispatch) => bindActionCreators({dispatch}, dispatch);
 
 export default connect(mapState, mapDispatch)(Chat);
